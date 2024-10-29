@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario y Gráficos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>GESTIÓN INVENTARIOS EGF-BQP</h1>
+    </header>
+
+    <main>
+        <div class="botones">
+            <button id="btn-inventario" class="active">Inventario</button>
+            <button id="btn-graficos">Gráficos</button>
+        </div>
+        <div id="seccion-inventario" class="seccion">
+        <section class="tabla_inventario">
+            <h2>Inventario</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="inventario-tbody">
+                    <!-- Aquí se agregarán los productos -->
+                </tbody>
+            </table></section>
+            </div>
+        <div id="seccion-inventario" class="seccion active">
+            <div id="formulario-agregar" class="formulario-modal">
+                <div class="formulario-contenido">
+                    <h3>Agregar Nuevo Producto</h3>
+                    <input type="text" id="nombre-producto" placeholder="Nombre del producto">
+                    <input type="number" id="cantidad-producto" placeholder="Cantidad">
+                    <input type="number" id="precio-producto" placeholder="Precio unitario">
+                    <div class="botones-formulario">
+                        <button onclick="agregarNuevoProducto()">Agregar</button>
+                        <button onclick="cerrarFormulario()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controles-inventario">
+                <button onclick="mostrarFormularioAgregar()">Agregar Producto</button>
+                <button onclick="quitarProducto()">Quitar Producto</button>
+            </div>
+        </div>
+        <!--TODO BIEN HASTA AQUI--->
+
+        <div id="seccion-graficos" class="seccion">
+            <h2>Gráficos</h2>
+            <div id="datos">
+                <!-- Aquí irán los inputs para los datos del gráfico -->
+            </div>
+            <div class="controles-graficos">
+                <input type="text" id="titulo" placeholder="Título del gráfico">
+                <select id="tipo">
+                    <option value="circular">Circular</option>
+                    <option value="barras">Barras</option>
+                </select>
+                <button onclick="cargarGrafico()">Generar Gráfico</button>
+            </div>
+            <div id="piechart"></div>
+        </div>
+    
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
